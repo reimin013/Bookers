@@ -120,3 +120,8 @@ div.field_with_errors {
     padding: 2px;
     display: table;
 }
+
+.notice {
+    color: green;
+    margin: 33px;
+}
