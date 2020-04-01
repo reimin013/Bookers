@@ -10,15 +10,19 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully created."
       redirect_to book_path(@book)
     else
+      @books = Book.all
       render action: :index
     end
   end
+
+  # 'render'はアクションを経由しないでビューに飛ぶ。その時、ビューが持つ変数が定義されていなければ再定義する必要がある。
 
   def show
     @book = Book.find(params[:id])
   end
 
   def new
+    @book = Book.new
   end
 
   def edit
